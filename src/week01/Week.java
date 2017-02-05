@@ -5,32 +5,12 @@ package week01;
  */
 public class Week {
     public static void run() {
-//        Stack s = new ArrayStack(5);
-//
-//        System.out.println("Empty: " + s.empty());
-//        System.out.println("Full: " + s.full());
-//
-//        s.push("Dette");
-//        s.push("er");
-//
-//        System.out.println("Empty: " + s.empty());
-//        System.out.println("Full: " + s.full());
-//
-//        s.push("en");
-//        s.push("hel");
-//        s.push("stack");
-//
-//        System.out.println("Empty: " + s.empty());
-//        System.out.println("Full: " + s.full());
-//
-//        System.out.println();
-//
-//        s.show();
-
-
-        Stack<String> s = new ArrayStack<>(2);
-        s.push("Hej");
-        s.push("Verden");
+        Stack<String> s = new LinkedStack<>();
+        s.push("test01");
+        s.push("test02");
+        s.push("test03");
+        s.push("test04");
+        s.push("test05");
         s.show();
     }
 }

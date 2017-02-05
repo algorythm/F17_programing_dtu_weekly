@@ -44,7 +44,7 @@ public class LinkedStack<E> implements Stack<E> {
         if (prev == null)
             this.first = null;
         else
-            prev.next = null;
+            this.last = prev;
         size--;
         return element;
     }
@@ -66,7 +66,7 @@ public class LinkedStack<E> implements Stack<E> {
     @Override
     public E peek() {
         final Node<E> first = this.first;
-        return (first == null) ? null : first.item;
+        return (last == null) ? null : last.item;
     }
 
     @Override

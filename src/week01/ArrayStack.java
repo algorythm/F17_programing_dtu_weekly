@@ -5,7 +5,8 @@ import java.util.Collection;
 /**
  * Created by awo on 30/01/17.
  */
-public class ArrayStack<T> implements Stack {
+// TODO: Fix this class!!
+public class ArrayStack<E> /*implements Stack<E>*/ {
     private Object[] stack;
 
     public ArrayStack(int stakSize) {
@@ -17,7 +18,7 @@ public class ArrayStack<T> implements Stack {
     }
 
     // Push will add an object to the end of the list, if it is possible.
-    @Override
+//    @Override
     public void push(Object element) {
         for (int i = 0; i < stack.length; i++)
             if (!this.full() && stack[i] == null) {
@@ -26,7 +27,7 @@ public class ArrayStack<T> implements Stack {
     }
 
     // This will pop out the last object of the list, and remove it from the list.
-    @Override
+//    @Override
     public Object pop() {
         for (int i = 0; i < stack.length; i++) {
             if (!this.empty() && stack[i] == null) {
@@ -43,7 +44,7 @@ public class ArrayStack<T> implements Stack {
     }
 
     // Returns true if the list is empty
-    @Override
+//    @Override
     public boolean empty() {
         int nullStrCount = 0;
         for (Object o : stack)
@@ -53,7 +54,7 @@ public class ArrayStack<T> implements Stack {
     }
 
     // Returns true is the list is full
-    @Override
+//    @Override
     public boolean full() {
         int setStrCount = 0;
         for (Object o : stack)
@@ -63,7 +64,7 @@ public class ArrayStack<T> implements Stack {
     }
 
     // Will return the value of the toString() method of each object in the list in reverse order.
-    @Override
+//    @Override
     public void show() {
         for (int i = stack.length - 1; i >= 0; i--)
             System.out.print(stack[i].toString() + " ");
