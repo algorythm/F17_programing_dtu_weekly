@@ -4,6 +4,7 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.Collection;
 import java.util.NoSuchElementException;
+import java.util.function.Consumer;
 
 /**
  * Created by awo on 30/01/17.
@@ -96,5 +97,13 @@ public class LinkedStack<E> implements Stack<E> {
             this.next = next;
             this.prev = prev;
         }
+    }
+
+    public Object[] toArray() {
+        Object[] results = new Object[size];
+        int i = 0;
+        for (Node<E> x = first; x != null; x = x.next)
+            results[i++] = x.item;
+        return results;
     }
 }
