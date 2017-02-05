@@ -9,21 +9,23 @@ public class ArrayStack<T> implements Stack {
     private Object[] stack;
 
     public ArrayStack(int stakSize) {
-        stack = new String[stakSize];
+        stack = new Object[stakSize];
     }
 
     public ArrayStack(Object... o) {
         stack = o;
     }
 
+    // Push will add an object to the end of the list, if it is possible.
     @Override
-    public void push(Object o) {
+    public void push(Object element) {
         for (int i = 0; i < stack.length; i++)
             if (!this.full() && stack[i] == null) {
-                stack[i] = o; return;
+                stack[i] = element; break;
             }
     }
 
+    // This will pop out the last object of the list, and remove it from the list.
     @Override
     public Object pop() {
         for (int i = 0; i < stack.length; i++) {
@@ -40,6 +42,7 @@ public class ArrayStack<T> implements Stack {
         return null;
     }
 
+    // Returns true if the list is empty
     @Override
     public boolean empty() {
         int nullStrCount = 0;
@@ -49,6 +52,7 @@ public class ArrayStack<T> implements Stack {
         return (nullStrCount == stack.length);
     }
 
+    // Returns true is the list is full
     @Override
     public boolean full() {
         int setStrCount = 0;
@@ -58,6 +62,7 @@ public class ArrayStack<T> implements Stack {
         return (setStrCount == stack.length);
     }
 
+    // Will return the value of the toString() method of each object in the list in reverse order.
     @Override
     public void show() {
         for (int i = stack.length - 1; i >= 0; i--)
