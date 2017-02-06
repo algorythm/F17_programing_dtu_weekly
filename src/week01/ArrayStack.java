@@ -1,72 +1,44 @@
 package week01;
 
-import java.util.Collection;
-
 /**
- * Created by awo on 30/01/17.
+ * Created by awo on 06/02/17.
  */
-// TODO: Fix this class!!
-public class ArrayStack<E> /*implements Stack<E>*/ {
-    private Object[] stack;
+public class ArrayStack<E> implements Stack<E> {
+    private E[] stack;
+    private int size = 0;
+    private final int DEFAULT_CAPACITY = 10;
 
-    public ArrayStack(int stakSize) {
-        stack = new Object[stakSize];
+    public ArrayStack() {
+//        this.stack = new E[DEFAULT_CAPACITY]; // TODO: Find the issue with this line
     }
 
-    public ArrayStack(Object... o) {
-        stack = o;
+    @Override
+    public void push(E element) {
+
     }
 
-    // Push will add an object to the end of the list, if it is possible.
-//    @Override
-    public void push(Object element) {
-        for (int i = 0; i < stack.length; i++)
-            if (!this.full() && stack[i] == null) {
-                stack[i] = element; break;
-            }
-    }
-
-    // This will pop out the last object of the list, and remove it from the list.
-//    @Override
-    public Object pop() {
-        for (int i = 0; i < stack.length; i++) {
-            if (!this.empty() && stack[i] == null) {
-                Object result = stack[i - 1];
-                stack[i -1] = null;
-                return result;
-            } else if (this.full()) {
-                Object result = stack[stack.length - 1];
-                stack[stack.length - 1] = null;
-                return result;
-            }
-        }
+    @Override
+    public E pop() {
         return null;
     }
 
-    // Returns true if the list is empty
-//    @Override
+    @Override
+    public E peek() {
+        return null;
+    }
+
+    @Override
     public boolean empty() {
-        int nullStrCount = 0;
-        for (Object o : stack)
-            if (o == null)
-                nullStrCount++;
-        return (nullStrCount == stack.length);
+        return false;
     }
 
-    // Returns true is the list is full
-//    @Override
+    @Override
     public boolean full() {
-        int setStrCount = 0;
-        for (Object o : stack)
-            if (o != null)
-                setStrCount++;
-        return (setStrCount == stack.length);
+        return false;
     }
 
-    // Will return the value of the toString() method of each object in the list in reverse order.
-//    @Override
+    @Override
     public void show() {
-        for (int i = stack.length - 1; i >= 0; i--)
-            System.out.print(stack[i].toString() + " ");
+
     }
 }
