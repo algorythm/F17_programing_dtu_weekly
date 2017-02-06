@@ -17,7 +17,7 @@ public class Main implements Week {
 
         for(Person p : data.people())
             System.out.println(p.getCPR());
-        System.out.println("bum");
+
         cli.execute();
     }
 }
